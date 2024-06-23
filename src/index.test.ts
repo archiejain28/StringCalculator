@@ -38,4 +38,9 @@ describe('Add method of String Calculator',()=>{
         expect(calc.add(null)).toEqual(0);
         expect(calc.add(undefined)).toEqual(0);
     })
+    test('Should return 1 when string formats doesnt match with any ',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add('//;;\n1;2')).toEqual(1);
+        expect(calc.add('/;;\n1;2')).toEqual(1);
+    })
 })
