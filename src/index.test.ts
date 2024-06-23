@@ -21,4 +21,8 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(()=>calc.add("-1,-4,0")).toThrow(Error);
     })
+    test('Should support different delimiter and return sum',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add("//;\n1;2")).toEqual(3);
+    })
 })
