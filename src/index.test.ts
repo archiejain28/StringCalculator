@@ -25,4 +25,8 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(calc.add("//;\n1;2")).toEqual(3);
     })
+    test('Should support delimiters of any length in given format and return sum',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add("//[***]\n1***2***3")).toEqual(6);
+    })
 })
