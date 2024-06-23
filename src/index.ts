@@ -3,8 +3,17 @@ export class StringCalculator {
         if (numbers.length == 0 || numbers == null) {
             return 0
         }
+       
         if (numbers.length > 0) {
-            const newArr = numbers.split(/[,\n]/)
+            let delimiter:string;
+            let input;
+            if(numbers.startsWith('//')){
+                const newString = numbers.split('\n',2)
+                delimiter = newString[0].substring(2)
+                input = newString[1]
+            }
+            const newArr = delimiter? input.split(`${delimiter}`) : numbers.split(/[,\n]/)
+            console.log(newArr);
             const negativeNumbers = newArr.filter((el) => {
                 return parseInt(el) < 0
             })
@@ -24,7 +33,7 @@ export class StringCalculator {
 
 try{
     const calc = new StringCalculator()
-    console.log(calc.add("1,-2,-4"))
+    console.log(calc.add("1\n2,3"))
 }catch(error){
   console.log(error.message)
 }
