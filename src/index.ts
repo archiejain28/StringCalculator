@@ -22,7 +22,9 @@ export class StringCalculator {
                 throw new Error(`negative numbers not allowed: ${negativeNumbers.join(',')}`)
             }else {
                 const sum = newArr.reduce((acc, curr) => {
-                    return curr ? acc = acc + parseInt(curr) : acc
+                    const num = parseInt(curr)
+                    return (num<1000 && !Number.isNaN(num)) ? acc = acc + num : acc
+
                 }, 0)
                 return sum
             }
@@ -34,7 +36,7 @@ export class StringCalculator {
 
 try{
     const calc = new StringCalculator()
-    console.log(calc.add("//$\n1$2"))
+    console.log(calc.add("1,2,,5"))
 }catch(error){
   console.log(error.message)
 }
