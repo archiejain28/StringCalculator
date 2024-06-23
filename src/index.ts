@@ -9,7 +9,8 @@ export class StringCalculator {
             let input;
             if(numbers.startsWith('//')){
                 const newString = numbers.split('\n',2)
-                delimiter = newString[0].substring(2)
+                delimiter = newString[0].substring(2).replace(/[\[\]]/g,'');
+                console.log(delimiter);
                 input = newString[1]
             }
             const newArr = delimiter? input.split(`${delimiter}`) : numbers.split(/[,\n]/)
@@ -33,7 +34,7 @@ export class StringCalculator {
 
 try{
     const calc = new StringCalculator()
-    console.log(calc.add("1\n2,3"))
+    console.log(calc.add("//$\n1$2"))
 }catch(error){
   console.log(error.message)
 }
