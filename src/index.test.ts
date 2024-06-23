@@ -29,4 +29,8 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(calc.add("//[***]\n1***2***3")).toEqual(6);
     })
+    test('Should ignore numbers greater than 1000',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add("1,2,,1000,22")).toEqual(25);
+    })
 })
