@@ -7,6 +7,10 @@ describe('Add method of String Calculator',()=>{
     })
     test('Should return sum when string comma-separated numbers given',()=>{
         const calc = new StringCalculator()
-        expect(calc.add('1,6,8')).toEqual(15);
+        expect(calc.add('1,2')).toEqual(3);
+    })
+    test('Should return sum when comma-separated and new lines between string of numbers given',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add("1\n2,3")).toEqual(6);
     })
 })
