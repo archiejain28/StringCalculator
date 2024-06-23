@@ -9,7 +9,7 @@ export class StringCalculator {
                 return parseInt(el) < 0
             })
             if (negativeNumbers.length > 0) {
-                throw new Error('negative numbers not allowed')
+                throw new Error(`negative numbers not allowed: ${negativeNumbers.join(',')}`)
             }else {
                 const sum = newArr.reduce((acc, curr) => {
                     return curr ? acc = acc + parseInt(curr) : acc
