@@ -33,4 +33,9 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(calc.add("1,2,,1000,22")).toEqual(25);
     })
+    test('Should return zero when null or undefined given',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add(null)).toEqual(0);
+        expect(calc.add(undefined)).toEqual(0);
+    })
 })
