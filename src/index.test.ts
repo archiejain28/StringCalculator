@@ -13,4 +13,8 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(calc.add("1\n2,3")).toEqual(6);
     })
+    test('Should not return NaN when splited array has empty string',()=>{
+        const calc = new StringCalculator()
+        expect(calc.add("1\n2,3\n\n")).not.toEqual(NaN);
+    })
 })

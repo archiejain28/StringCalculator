@@ -7,8 +7,7 @@ export class StringCalculator {
         const newArr = numbers.split(/[,\n]/)
         console.log(newArr)
         const sum = newArr.reduce((acc, curr)=>{
-            acc = acc + parseInt(curr)
-            return acc
+            return curr ? acc = acc + parseInt(curr): acc
         },0)
         return sum
     }
