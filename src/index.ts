@@ -1,6 +1,6 @@
 export class StringCalculator {
     add(numbers: string): number {
-        if (numbers.length == 0 || numbers == null) {
+        if (numbers == null || numbers == undefined || numbers.length == 0 ) {
             return 0
         }
        
