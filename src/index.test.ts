@@ -17,4 +17,8 @@ describe('Add method of String Calculator',()=>{
         const calc = new StringCalculator()
         expect(calc.add("1\n2,3\n\n")).not.toEqual(NaN);
     })
+    test('Should throw error with negative numbers',()=>{
+        const calc = new StringCalculator()
+        expect(()=>calc.add("-1,-4,0")).toThrow(Error);
+    })
 })
